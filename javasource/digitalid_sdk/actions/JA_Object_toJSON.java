@@ -10,22 +10,25 @@
 package digitalid_sdk.actions;
 
 import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.webui.CustomJavaAction;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
+import com.mendix.systemwideinterfaces.core.UserAction;
 
 /**
  * This java action converts an object and all associated object to JSON automatically. For 1-1, 1-*, *-* with the currently iterated object the owner of the associations, a key is created with the fully qualified relation name in the domain model (e.g. Module.Relation). The value will be either an object or an array.
  * 
  * Todo: handle reverse associations and filtering (in terms of what you would like to keep and skip module wise, relation wise, etc.) as well as safety measures to avoid infinite loop serialization
  */
-public class JA_Object_toJSON extends CustomJavaAction<java.lang.String>
+public class JA_Object_toJSON extends UserAction<java.lang.String>
 {
-	private IMendixObject obj;
+	private final IMendixObject obj;
 
-	public JA_Object_toJSON(IContext context, IMendixObject obj)
+	public JA_Object_toJSON(
+		IContext context,
+		IMendixObject _obj
+	)
 	{
 		super(context);
-		this.obj = obj;
+		this.obj = _obj;
 	}
 
 	@java.lang.Override

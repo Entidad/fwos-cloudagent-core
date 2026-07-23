@@ -10,23 +10,26 @@
 package digitalid_sdk.actions;
 
 import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.webui.CustomJavaAction;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import com.mendix.systemwideinterfaces.core.UserAction;
 
 /**
  * https://github.com/hyperledger/aries-rfcs/blob/main/concepts/0268-unified-didcomm-agent-deeplinking/README.md
  */
-public class JA_DIDComm_getMessageFromUrl extends CustomJavaAction<java.lang.String>
+public class JA_DIDComm_getMessageFromUrl extends UserAction<java.lang.String>
 {
-	private java.lang.String messageUrl;
+	private final java.lang.String messageUrl;
 
-	public JA_DIDComm_getMessageFromUrl(IContext context, java.lang.String messageUrl)
+	public JA_DIDComm_getMessageFromUrl(
+		IContext context,
+		java.lang.String _messageUrl
+	)
 	{
 		super(context);
-		this.messageUrl = messageUrl;
+		this.messageUrl = _messageUrl;
 	}
 
 	@java.lang.Override

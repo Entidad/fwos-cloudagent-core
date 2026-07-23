@@ -10,24 +10,27 @@
 package digitalid_sdk.actions;
 
 import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.webui.CustomJavaAction;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 import com.mendix.thirdparty.org.json.JSONArray;
 import com.mendix.thirdparty.org.json.JSONObject;
 import com.mendix.thirdparty.org.json.JSONException;
+import com.mendix.systemwideinterfaces.core.UserAction;
 
 /**
  * Twilio calls webhooks with form data. To make this usable, we can convert it to json using this Java action
  */
-public class JA_QueryParams_toJSON extends CustomJavaAction<java.lang.String>
+public class JA_QueryParams_toJSON extends UserAction<java.lang.String>
 {
-	private java.lang.String str_val;
+	private final java.lang.String str_val;
 
-	public JA_QueryParams_toJSON(IContext context, java.lang.String str_val)
+	public JA_QueryParams_toJSON(
+		IContext context,
+		java.lang.String _str_val
+	)
 	{
 		super(context);
-		this.str_val = str_val;
+		this.str_val = _str_val;
 	}
 
 	@java.lang.Override

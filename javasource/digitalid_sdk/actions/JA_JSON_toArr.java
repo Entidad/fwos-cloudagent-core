@@ -10,18 +10,21 @@
 package digitalid_sdk.actions;
 
 import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.webui.CustomJavaAction;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
 import com.mendix.thirdparty.org.json.JSONObject;
+import com.mendix.systemwideinterfaces.core.UserAction;
 
-public class JA_JSON_toArr extends CustomJavaAction<java.util.List<IMendixObject>>
+public class JA_JSON_toArr extends UserAction<java.util.List<IMendixObject>>
 {
-	private java.lang.String str_json;
+	private final java.lang.String str_json;
 
-	public JA_JSON_toArr(IContext context, java.lang.String str_json)
+	public JA_JSON_toArr(
+		IContext context,
+		java.lang.String _str_json
+	)
 	{
 		super(context);
-		this.str_json = str_json;
+		this.str_json = _str_json;
 	}
 
 	@java.lang.Override

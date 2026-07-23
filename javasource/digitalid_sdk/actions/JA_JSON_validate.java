@@ -10,20 +10,23 @@
 package digitalid_sdk.actions;
 
 import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.webui.CustomJavaAction;
 import com.mendix.thirdparty.org.json.JSONObject;
+import com.mendix.systemwideinterfaces.core.UserAction;
 
 /**
  * Tests if the json is valid
  */
-public class JA_JSON_validate extends CustomJavaAction<java.lang.Boolean>
+public class JA_JSON_validate extends UserAction<java.lang.Boolean>
 {
-	private java.lang.String json;
+	private final java.lang.String json;
 
-	public JA_JSON_validate(IContext context, java.lang.String json)
+	public JA_JSON_validate(
+		IContext context,
+		java.lang.String _json
+	)
 	{
 		super(context);
-		this.json = json;
+		this.json = _json;
 	}
 
 	@java.lang.Override

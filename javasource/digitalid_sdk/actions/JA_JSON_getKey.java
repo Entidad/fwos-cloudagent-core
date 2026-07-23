@@ -10,22 +10,26 @@
 package digitalid_sdk.actions;
 
 import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.webui.CustomJavaAction;
 import com.mendix.thirdparty.org.json.JSONObject;
+import com.mendix.systemwideinterfaces.core.UserAction;
 
 /**
  * Simple action to do single level key lookup on a JSON object
  */
-public class JA_JSON_getKey extends CustomJavaAction<java.lang.String>
+public class JA_JSON_getKey extends UserAction<java.lang.String>
 {
-	private java.lang.String str_val;
-	private java.lang.String str_k;
+	private final java.lang.String str_val;
+	private final java.lang.String str_k;
 
-	public JA_JSON_getKey(IContext context, java.lang.String str_val, java.lang.String str_k)
+	public JA_JSON_getKey(
+		IContext context,
+		java.lang.String _str_val,
+		java.lang.String _str_k
+	)
 	{
 		super(context);
-		this.str_val = str_val;
-		this.str_k = str_k;
+		this.str_val = _str_val;
+		this.str_k = _str_k;
 	}
 
 	@java.lang.Override

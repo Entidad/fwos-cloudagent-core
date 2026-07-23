@@ -11,7 +11,7 @@ package digitalid_sdk.actions;
 
 import java.util.UUID;
 import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.webui.CustomJavaAction;
+import com.mendix.systemwideinterfaces.core.UserAction;
 
 /**
  * A simple function for creating Guids. Useful for when you want exposed unique ids for objects used with REST APIs.
@@ -20,7 +20,7 @@ import com.mendix.webui.CustomJavaAction;
  * 
  * See https://www.geeksforgeeks.org/java-util-uuid-class-java/ for more information.
  */
-public class JA_GUID_create extends CustomJavaAction<java.lang.String>
+public class JA_GUID_create extends UserAction<java.lang.String>
 {
 	public JA_GUID_create(IContext context)
 	{
